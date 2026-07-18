@@ -3,10 +3,10 @@ import Quickshell
 
 ShellRoot {
     Variants {
-        model: Quickshell.screens
+        variants: Quickshell.screens
 
         PanelWindow {
-            required property var modelData
+            property var modelData
 
             screen: modelData
 
@@ -24,8 +24,8 @@ ShellRoot {
 
                 Text {
                     anchors.centerIn: parent
-                    color: "white"
                     text: "NixML4W"
+                    color: "white"
                 }
             }
         }
