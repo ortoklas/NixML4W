@@ -6,6 +6,7 @@
     ./modules/fastfetch.nix
     ./modules/kitty.nix
     ./modules/fonts.nix
+    ./modules/hyprland.nix
   ];
 
   home.username = "highv";
