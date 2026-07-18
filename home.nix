@@ -1,12 +1,14 @@
 { config, pkgs, ... }:
 
 {
+
   imports = [
     ./modules/packages.nix
     ./modules/fastfetch.nix
     ./modules/kitty.nix
     ./modules/fonts.nix
     ./modules/hyprland.nix
+    ./modules/keybindings.nix
   ];
 
   home.username = "highv";
