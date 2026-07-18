@@ -9,6 +9,7 @@
     ./modules/fonts.nix
     ./modules/hyprland.nix
     ./modules/keybindings.nix
+    ./modules/quickshell.nix
   ];
 
   home.username = "highv";
