@@ -4,14 +4,16 @@
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "hyprlang";
- 
+
     settings = {
 
       #########################
       ## MONITORS
       #########################
 
-      monitor = ",preferred,auto,1";
+      monitor = [
+        "DP-3,3840x2160@60,0x0,1.5"
+      ];
 
       #########################
       ## GENERAL
@@ -27,7 +29,6 @@
         "col.inactive_border" = "rgba(444444aa)";
 
         resize_on_border = true;
-
         allow_tearing = false;
 
         layout = "dwindle";
@@ -76,24 +77,6 @@
 
         sensitivity = 0;
       };
-
-      #########################
-      ## DWINDLE
-      #########################
-
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
-
-      #########################
-      ## GESTURES
-      #########################
-
-      gestures = {
-        workspace_swipe = false;
-      };
-
     };
   };
 }
