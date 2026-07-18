@@ -1,0 +1,14 @@
+# Editor backups
+*~
+*.swp
+*.bak
+
+# Temporary files
+result
+result-*
+
+# macOS
+.DS_Store
+
+# Micro editor backups
+*.backup
