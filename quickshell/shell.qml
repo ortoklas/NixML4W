@@ -1,32 +1,28 @@
 import QtQuick
 import Quickshell
+import Quickshell.Hyprland
 
 ShellRoot {
-    Variants {
-        variants: Quickshell.screens
 
-        PanelWindow {
-            property var modelData
+    PanelWindow {
+        screen: Quickshell.primaryScreen
 
-            screen: modelData
+        anchors {
+            top: true
+            left: true
+            right: true
+        }
 
-            anchors {
-                top: true
-                left: true
-                right: true
-            }
+        implicitHeight: 40
 
-            implicitHeight: 40
+        Rectangle {
+            anchors.fill: parent
+            color: "#2E3440"
 
-            Rectangle {
-                anchors.fill: parent
-                color: "#2E3440"
-
-                Text {
-                    anchors.centerIn: parent
-                    text: "NixML4W"
-                    color: "white"
-                }
+            Text {
+                anchors.centerIn: parent
+                text: "NixML4W"
+                color: "white"
             }
         }
     }
