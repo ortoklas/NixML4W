@@ -1,14 +1,29 @@
 import QtQuick
+import Quickshell
+import Quickshell.Io
 
 Text {
     id: clock
 
     color: "white"
-    font.pixelSize: 16
 
-    function updateClock() {
-        var d = new Date()
-        text = Qt.formatDateTime(d, "ddd  MMM d   hh:mm AP")
+    font.family: "JetBrainsMono Nerd Font"
+    font.pixelSize: 15
+    font.bold: true
+
+    Process {
+        id: date
+
+        command: [
+            "date",
+            "+%a %b %d  |  %H:%M"
+        ]
+
+        stdout: SplitParser {
+            onRead: data => clock.text = data.trim()
+        }
+
+        running: true
     }
 
     Timer {
@@ -16,8 +31,6 @@ Text {
         repeat: true
         running: true
 
-        onTriggered: clock.updateClock()
+        onTriggered: date.running = true
     }
-
-    Component.onCompleted: updateClock()
 }
