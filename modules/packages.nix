@@ -15,6 +15,8 @@
     nemo
 
     # Wallpaper
+    waypaper
+    awww
     hyprpaper
 
     # Lock / Idle
@@ -31,6 +33,7 @@
     # Screenshots
     grim
     slurp
+    swappy
 
     # Audio
     pavucontrol
@@ -47,7 +50,7 @@
     # Utilities
     unzip
     zip
-    feh
+    imv
     jq
     curl
     wget

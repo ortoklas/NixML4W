@@ -7,6 +7,9 @@
 
     bind = [
 
+      #swappy screen capture
+      "$mod, semicolon, exec, grim -g \"$(slurp)\" - | swappy -f -"
+
       # Walker
       "$mod, SPACE, exec, walker"
       

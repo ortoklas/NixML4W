@@ -46,7 +46,6 @@ PanelWindow {
 
                 spacing: 18
 
-                WallpaperButton { }
 
                 VolumeButton { }
 
