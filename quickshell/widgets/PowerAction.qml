@@ -13,15 +13,27 @@ Rectangle {
     property var command
 
     Layout.fillWidth: true
-    Layout.preferredHeight: 44
+    Layout.preferredHeight: 48
 
-    radius: 8
+    radius: 12
 
     color: mouseArea.containsMouse
-        ? Theme.surfaceAlt
+        ? Theme.accentStrong
         : Theme.surface
 
+    border.width: 1
+
+    border.color: mouseArea.containsMouse
+        ? Theme.accent
+        : Theme.surfaceAlt
+
     Behavior on color {
+        ColorAnimation {
+            duration: 120
+        }
+    }
+
+    Behavior on border.color {
         ColorAnimation {
             duration: 120
         }
@@ -35,17 +47,21 @@ Rectangle {
 
     RowLayout {
         anchors.fill: parent
-        anchors.leftMargin: 12
-        anchors.rightMargin: 12
 
-        spacing: 12
+        anchors.leftMargin: 14
+        anchors.rightMargin: 14
+
+        spacing: 14
 
         Text {
             text: action.icon
 
-            color: Theme.text
+            color: mouseArea.containsMouse
+                ? Theme.text
+                : Theme.textMuted
+
             font.family: "JetBrainsMono Nerd Font"
-            font.pixelSize: 18
+            font.pixelSize: 20
         }
 
         Text {
@@ -66,6 +82,7 @@ Rectangle {
         anchors.fill: parent
 
         hoverEnabled: true
+
         cursorShape: Qt.PointingHandCursor
 
         onClicked: {

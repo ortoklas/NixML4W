@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import Quickshell.Io
 
 import "../theme"
 import "../widgets"
@@ -15,35 +16,39 @@ PanelWindow {
         right: true
     }
 
-    implicitWidth: 260
-    implicitHeight: 320
+    implicitWidth: 300
+    implicitHeight: 390
 
     color: "transparent"
 
     Rectangle {
         id: panel
 
-        anchors.fill: parent
+        anchors {
+            top: parent.top
+            right: parent.right
+            bottom: parent.bottom
+            left: parent.left
+
+            topMargin: 10
+            rightMargin: 10
+            bottomMargin: 10
+            leftMargin: 10
+        }
+
+        radius: 24
 
         color: Theme.background
-        radius: 12
 
         border.width: 1
-        border.color: Theme.surfaceAlt
-
-        opacity: PowerState.panelOpen ? 1.0 : 0.0
-
-        Behavior on opacity {
-            NumberAnimation {
-                duration: 160
-            }
-        }
+        border.color: Theme.accentStrong
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: 16
 
-            spacing: 8
+            anchors.margins: 18
+
+            spacing: 10
 
             Text {
                 text: "POWER"
@@ -95,14 +100,47 @@ PanelWindow {
                 ]
             }
 
-            PowerAction {
-                icon: "󰍹"
-                label: "Reboot to UEFI"
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 48
+
+                radius: 24
+
+                color: Theme.accentStrong
+
+                border.width: 1
+                border.color: Theme.accent
+
+                Text {
+                    anchors.centerIn: parent
+
+                    text: "󰍹  Reboot to UEFI"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 14
+                    font.bold: true
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+
+                    cursorShape: Qt.PointingHandCursor
+
+                    onClicked: {
+                        uefiReboot.running = true
+                    }
+                }
+            }
+
+            Process {
+                id: uefiReboot
 
                 command: [
                     "/run/current-system/sw/bin/systemctl",
                     "reboot",
-                    "--boot-loader-entry=auto-reboot-to-firmware-setup"
+                    "--firmware-setup"
                 ]
             }
 

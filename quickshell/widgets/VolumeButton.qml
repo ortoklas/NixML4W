@@ -32,6 +32,18 @@ Text {
             "toggle"
         ]
     }
+   Process {
+       id: volumeUp
+       command: ["/run/current-system/sw/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+"]
+   }
+
+   Process {
+       id: volumeDown
+       command: ["/run/current-system/sw/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-"]
+   }
+
+
+
 
     MouseArea {
         id: mouseArea
@@ -40,15 +52,17 @@ Text {
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
 
+       onWheel: function(wheel) {
+           if (wheel.angleDelta.y > 0) {
+               volumeUp.running = true
+           } else if (wheel.angleDelta.y < 0) {
+               volumeDown.running = true
+           }
+       }
+
         onClicked: {
             toggleMute.running = true
         }
 
-        onPressed: {
-            if (mouse.button === Qt.LeftButton) {
-                // Mute/unmute
-                toggleMute.running = true
-            }
-        }
     }
 }

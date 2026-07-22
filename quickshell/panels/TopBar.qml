@@ -14,56 +14,84 @@ PanelWindow {
         right: true
     }
 
-    implicitHeight: Theme.barHeight
+    implicitHeight: 64
+
+    color: "transparent"
 
     Rectangle {
-        anchors.fill: parent
+        id: mainPanel
 
-        color: Theme.background
-
-        RowLayout {
-            anchors.fill: parent
-
-            anchors.leftMargin: 12
-            anchors.rightMargin: 12
-
-            spacing: 0
-
-            RowLayout {
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignLeft
-
-                spacing: 12
-
-                Launcher { }
-
-                Workspaces { }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignRight
-
-                spacing: 18
-
-
-                VolumeButton { }
-
-                NetworkButton { }
-
-                PowerButton { }
-            }
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            verticalCenter: parent.verticalCenter
         }
 
-        Item {
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
+        width: mainContent.implicitWidth + 36
+        height: 44
 
-            width: 220
-            height: parent.height
+        radius: height / 2
 
+        color: Theme.backgroundAlt
+        border.color: Theme.surfaceAlt
+        border.width: 1
+
+        RowLayout {
+            id: mainContent
+
+            anchors.centerIn: parent
+
+            spacing: 16
+
+            // LAUNCHER
+            Launcher {
+            }
+
+            Rectangle {
+                width: 1
+                height: 22
+
+                color: Theme.surfaceAlt
+            }
+
+            // WORKSPACES
+            Workspaces {
+            }
+
+            Rectangle {
+                width: 1
+                height: 22
+
+                color: Theme.surfaceAlt
+            }
+
+            // CLOCK
             Clock {
-                anchors.centerIn: parent
+            }
+
+            Rectangle {
+                width: 1
+                height: 22
+
+                color: Theme.surfaceAlt
+            }
+
+            // VOLUME
+            VolumeButton {
+            }
+
+            // NETWORK
+            NetworkButton {
+            }
+
+            Rectangle {
+                width: 1
+                height: 22
+
+                color: Theme.surfaceAlt
+            }
+
+            // POWER
+            PowerButton {
             }
         }
     }

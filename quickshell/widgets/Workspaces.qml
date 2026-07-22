@@ -17,14 +17,29 @@ Row {
 
             width: 28
             height: 28
-            radius: 6
+
+            // Perfect circle
+            radius: width / 2
 
             color: Hyprland.focusedWorkspace !== null &&
                    Hyprland.focusedWorkspace.id === wsId
                 ? Theme.accent
                 : Theme.surfaceAlt
 
+            border.width: 1
+
+            border.color: Hyprland.focusedWorkspace !== null &&
+                          Hyprland.focusedWorkspace.id === wsId
+                ? Theme.accent
+                : Theme.backgroundAlt
+
             Behavior on color {
+                ColorAnimation {
+                    duration: 150
+                }
+            }
+
+            Behavior on border.color {
                 ColorAnimation {
                     duration: 150
                 }
@@ -37,7 +52,8 @@ Row {
 
                 color: Theme.text
 
-                font.pixelSize: 14
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 13
 
                 font.bold: Hyprland.focusedWorkspace !== null &&
                             Hyprland.focusedWorkspace.id === workspaceButton.wsId
