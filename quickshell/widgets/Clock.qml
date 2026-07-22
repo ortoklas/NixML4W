@@ -2,10 +2,12 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 
+import "../theme"
+
 Text {
     id: clock
 
-    color: "white"
+    color: Theme.text
 
     font.family: "JetBrainsMono Nerd Font"
     font.pixelSize: 15

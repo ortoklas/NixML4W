@@ -1,0 +1,35 @@
+import QtQuick
+import Quickshell
+import Quickshell.Io
+
+Item {
+    width: 28
+    height: 28
+
+    Process {
+        id: walker
+        command: ["walker"]
+    }
+
+    Image {
+        anchors.centerIn: parent
+
+        width: 22
+        height: 22
+
+        source: Qt.resolvedUrl("../assets/icons/apps.svg")
+        fillMode: Image.PreserveAspectFit
+        smooth: true
+    }
+
+    MouseArea {
+        anchors.fill: parent
+
+        hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
+
+        onClicked: {
+            walker.running = true
+        }
+    }
+}

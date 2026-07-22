@@ -12,7 +12,9 @@
       #########################
 
       exec-once = [
-        "qs -p ~/.config/quickshell"
+        "awww-daemon"
+        "qs --daemonize"
+        "lxqt-policykit-agent"
       ];
 
       #########################

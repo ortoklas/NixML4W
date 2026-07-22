@@ -7,6 +7,9 @@
 
     bind = [
 
+      # Walker
+      "$mod, SPACE, exec, walker"
+      
       # Terminal
       "$mod, RETURN, exec, kitty"
 
@@ -29,7 +32,7 @@
       "$mod SHIFT, Q, exit"
 
       # Launcher (we'll replace later)
-      "$mod, SPACE, exec, wofi"
+      
 
       # Workspaces
       "$mod, 1, workspace, 1"

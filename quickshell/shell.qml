@@ -7,4 +7,7 @@ ShellRoot {
     TopBar {
     }
 
+    PowerPanel {
+    }
+
 }

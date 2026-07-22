@@ -3,9 +3,10 @@ import QtQuick.Layouts
 import Quickshell
 
 import "../widgets"
+import "../theme"
 
 PanelWindow {
-    screen: Quickshell.primaryScreen
+    screen: Quickshell.screens[0]
 
     anchors {
         top: true
@@ -13,22 +14,21 @@ PanelWindow {
         right: true
     }
 
-    implicitHeight: 40
+    implicitHeight: Theme.barHeight
 
     Rectangle {
         anchors.fill: parent
-        color: "#2E3440"
+
+        color: Theme.background
 
         RowLayout {
             anchors.fill: parent
+
             anchors.leftMargin: 12
             anchors.rightMargin: 12
 
             spacing: 0
 
-            //
-            // LEFT
-            //
             RowLayout {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignLeft
@@ -40,49 +40,31 @@ PanelWindow {
                 Workspaces { }
             }
 
-            //
-            // CENTER
-            //
-            Item {
-                Layout.preferredWidth: 260
-                Layout.fillHeight: true
-
-                Clock {
-                    anchors.centerIn: parent
-                }
-            }
-
-            //
-            // RIGHT
-            //
             RowLayout {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignRight
 
                 spacing: 18
 
-                Text {
-                    text: "󰕾"
-                    color: "white"
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 18
-                }
+                WallpaperButton { }
 
-                Text {
-                    text: "󰤨"
-                    color: "white"
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 18
-                }
+                VolumeButton { }
 
-                Text {
-                    text: "󰁹"
-                    color: "white"
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 18
-                }
+                NetworkButton { }
 
                 PowerButton { }
+            }
+        }
+
+        Item {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+
+            width: 220
+            height: parent.height
+
+            Clock {
+                anchors.centerIn: parent
             }
         }
     }
