@@ -16,29 +16,23 @@ PanelWindow {
         right: true
     }
 
-    implicitWidth: 300
-    implicitHeight: 390
+    margins.top: 70
+
+    implicitWidth: 200
+    implicitHeight: 330
 
     color: "transparent"
 
     Rectangle {
         id: panel
 
-        anchors {
-            top: parent.top
-            right: parent.right
-            bottom: parent.bottom
-            left: parent.left
+        anchors.fill: parent
 
-            topMargin: 10
-            rightMargin: 10
-            bottomMargin: 10
-            leftMargin: 10
-        }
+        anchors.margins: 10
 
         radius: 24
 
-        color: Theme.background
+        color: "transparent"
 
         border.width: 1
         border.color: Theme.accentStrong
@@ -46,29 +40,9 @@ PanelWindow {
         ColumnLayout {
             anchors.fill: parent
 
-            anchors.margins: 18
+            anchors.margins: 14
 
-            spacing: 10
-
-            Text {
-                text: "POWER"
-
-                color: Theme.text
-
-                font.family: "JetBrainsMono Nerd Font"
-                font.pixelSize: 18
-                font.bold: true
-
-                Layout.alignment: Qt.AlignHCenter
-            }
-
-            Rectangle {
-                Layout.fillWidth: true
-
-                height: 1
-
-                color: Theme.surfaceAlt
-            }
+            spacing: 8
 
             PowerAction {
                 icon: "󰌾"
@@ -102,9 +76,9 @@ PanelWindow {
 
             Rectangle {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 48
+                Layout.preferredHeight: 44
 
-                radius: 24
+                radius: 22
 
                 color: Theme.accentStrong
 
@@ -114,7 +88,7 @@ PanelWindow {
                 Text {
                     anchors.centerIn: parent
 
-                    text: "󰍹  Reboot to UEFI"
+                    text: "󰍹  UEFI"
 
                     color: Theme.text
 

@@ -29,24 +29,15 @@ ACCENT_STRONG="${COLORS[3]}"
 TEXT="F2F2F2"
 TEXT_MUTED="${COLORS[6]}"
 
-cat > "$HOME/.config/home-manager/quickshell/theme/Theme.qml" <<THEME
-pragma Singleton
-
-import QtQuick
-
-QtObject {
-    readonly property color background: "#$BACKGROUND"
-    readonly property color backgroundAlt: "#$BACKGROUND_ALT"
-
-    readonly property color surface: "#$SURFACE"
-    readonly property color surfaceAlt: "#$SURFACE_ALT"
-
-    readonly property color accent: "#$ACCENT"
-    readonly property color accentStrong: "#$ACCENT_STRONG"
-
-    readonly property color text: "#$TEXT"
-    readonly property color textMuted: "#$TEXT_MUTED"
-
-    readonly property int barHeight: 40
+cat > "$HOME/.config/quickshell-theme.json" <<JSON
+{
+    "background": "#$BACKGROUND",
+    "backgroundAlt": "#$BACKGROUND_ALT",
+    "surface": "#$SURFACE",
+    "surfaceAlt": "#$SURFACE_ALT",
+    "accent": "#$ACCENT",
+    "accentStrong": "#$ACCENT_STRONG",
+    "text": "#$TEXT",
+    "textMuted": "#$TEXT_MUTED"
 }
-THEME
+JSON

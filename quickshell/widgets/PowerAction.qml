@@ -13,13 +13,13 @@ Rectangle {
     property var command
 
     Layout.fillWidth: true
-    Layout.preferredHeight: 48
+    Layout.preferredHeight: 44
 
-    radius: 12
+    radius: 22
 
     color: mouseArea.containsMouse
         ? Theme.accentStrong
-        : Theme.surface
+        : "transparent"
 
     border.width: 1
 
@@ -48,8 +48,8 @@ Rectangle {
     RowLayout {
         anchors.fill: parent
 
-        anchors.leftMargin: 14
-        anchors.rightMargin: 14
+        anchors.leftMargin: 18
+        anchors.rightMargin: 18
 
         spacing: 14
 

@@ -31,11 +31,11 @@
 
       general = {
         gaps_in = 5;
-        gaps_out = 15;
+        gaps_out = 8;
 
-        border_size = 2;
+        border_size = 3;
 
-        "col.active_border" = "rgba(5e81acff)";
+        "col.active_border" = "rgba(7851a9ff)";   # Royal Purple
         "col.inactive_border" = "rgba(444444aa)";
 
         resize_on_border = true;
@@ -49,7 +49,7 @@
       #########################
 
       decoration = {
-        rounding = 12;
+        rounding = 6;
 
         blur = {
           enabled = true;

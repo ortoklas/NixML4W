@@ -7,7 +7,7 @@
     settings = {
       logo = {
         type = "builtin";
-        source = "nixos_old_small";
+        source = "NixOS2";
       };
 
       display = {

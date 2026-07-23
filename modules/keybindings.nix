@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   wayland.windowManager.hyprland.settings = {
@@ -7,19 +7,19 @@
 
     bind = [
 
-      #swappy screen capture
+      # Screenshot
       "$mod, semicolon, exec, grim -g \"$(slurp)\" - | swappy -f -"
 
-      # Walker
+      # Walker launcher
       "$mod, SPACE, exec, walker"
-      
+
       # Terminal
       "$mod, RETURN, exec, kitty"
 
       # Browser
       "$mod, B, exec, brave"
 
-      # File Manager (temporary until Nemo)
+      # File Manager
       "$mod, E, exec, dolphin"
 
       # Close window
@@ -34,9 +34,6 @@
       # Exit Hyprland
       "$mod SHIFT, Q, exit"
 
-      # Launcher (we'll replace later)
-      
-
       # Workspaces
       "$mod, 1, workspace, 1"
       "$mod, 2, workspace, 2"
@@ -44,12 +41,18 @@
       "$mod, 4, workspace, 4"
       "$mod, 5, workspace, 5"
 
-      # Move window
+      # Move window to workspace
       "$mod SHIFT, 1, movetoworkspace, 1"
       "$mod SHIFT, 2, movetoworkspace, 2"
       "$mod SHIFT, 3, movetoworkspace, 3"
       "$mod SHIFT, 4, movetoworkspace, 4"
       "$mod SHIFT, 5, movetoworkspace, 5"
+    ];
+
+    # Mouse window controls
+    bindm = [
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
     ];
 
   };

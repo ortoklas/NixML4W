@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      font_family = "JetBrains Mono Nerd Font";
+      font_family = "Geist Mono NF";
       font_size = 11;
 
       background = "#1e1e1e";
