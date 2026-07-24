@@ -16,8 +16,8 @@ PanelWindow {
 
     margins.top: 70
 
-    implicitWidth: 420
-    implicitHeight: 560
+    implicitWidth: 500
+    implicitHeight: 650
 
     color: "transparent"
 
@@ -34,20 +34,43 @@ PanelWindow {
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: 20
+            anchors.margins: 22
 
-            spacing: 10
+            spacing: 12
 
-            Text {
-                text: "󰘳  KEYBINDINGS"
+            // HEADER
+            RowLayout {
+                Layout.fillWidth: true
 
-                color: Theme.text
+                Text {
+                    text: "󰘳"
 
-                font.family: "JetBrainsMono Nerd Font"
-                font.pixelSize: 18
-                font.bold: true
+                    color: Theme.accent
 
-                Layout.alignment: Qt.AlignHCenter
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 24
+                }
+
+                Text {
+                    text: "KEYBINDINGS"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 18
+                    font.bold: true
+
+                    Layout.fillWidth: true
+                }
+
+                Text {
+                    text: "NixML4W"
+
+                    color: Theme.textMuted
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 11
+                }
             }
 
             Rectangle {
@@ -57,23 +80,42 @@ PanelWindow {
                 color: Theme.surfaceAlt
             }
 
+            // APPLICATIONS
+            Text {
+                text: "APPLICATIONS"
+
+                color: Theme.accent
+
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 11
+                font.bold: true
+
+                Layout.topMargin: 4
+            }
+
             RowLayout {
                 Layout.fillWidth: true
 
                 Text {
                     text: "SUPER + SPACE"
-                    color: Theme.accent
+
+                    color: Theme.text
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 12
                     font.bold: true
-                    Layout.preferredWidth: 180
+
+                    Layout.preferredWidth: 190
                 }
 
                 Text {
-                    text: "Open launcher"
-                    color: Theme.text
+                    text: "Launcher"
+
+                    color: Theme.textMuted
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 13
+
                     Layout.fillWidth: true
                 }
             }
@@ -83,18 +125,24 @@ PanelWindow {
 
                 Text {
                     text: "SUPER + ENTER"
-                    color: Theme.accent
+
+                    color: Theme.text
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 12
                     font.bold: true
-                    Layout.preferredWidth: 180
+
+                    Layout.preferredWidth: 190
                 }
 
                 Text {
-                    text: "Open terminal"
-                    color: Theme.text
+                    text: "Terminal"
+
+                    color: Theme.textMuted
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 13
+
                     Layout.fillWidth: true
                 }
             }
@@ -104,18 +152,24 @@ PanelWindow {
 
                 Text {
                     text: "SUPER + B"
-                    color: Theme.accent
+
+                    color: Theme.text
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 12
                     font.bold: true
-                    Layout.preferredWidth: 180
+
+                    Layout.preferredWidth: 190
                 }
 
                 Text {
-                    text: "Open browser"
-                    color: Theme.text
+                    text: "Browser"
+
+                    color: Theme.textMuted
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 13
+
                     Layout.fillWidth: true
                 }
             }
@@ -125,125 +179,39 @@ PanelWindow {
 
                 Text {
                     text: "SUPER + E"
-                    color: Theme.accent
+
+                    color: Theme.text
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 12
                     font.bold: true
-                    Layout.preferredWidth: 180
+
+                    Layout.preferredWidth: 190
                 }
 
                 Text {
-                    text: "Open file manager"
-                    color: Theme.text
+                    text: "File manager"
+
+                    color: Theme.textMuted
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 13
+
                     Layout.fillWidth: true
                 }
             }
 
-            RowLayout {
-                Layout.fillWidth: true
+            // WINDOW MANAGEMENT
+            Text {
+                text: "WINDOW MANAGEMENT"
 
-                Text {
-                    text: "SUPER + Q"
-                    color: Theme.accent
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 12
-                    font.bold: true
-                    Layout.preferredWidth: 180
-                }
+                color: Theme.accent
 
-                Text {
-                    text: "Close window"
-                    color: Theme.text
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 13
-                    Layout.fillWidth: true
-                }
-            }
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 11
+                font.bold: true
 
-            RowLayout {
-                Layout.fillWidth: true
-
-                Text {
-                    text: "SUPER + F"
-                    color: Theme.accent
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 12
-                    font.bold: true
-                    Layout.preferredWidth: 180
-                }
-
-                Text {
-                    text: "Fullscreen"
-                    color: Theme.text
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 13
-                    Layout.fillWidth: true
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-
-                Text {
-                    text: "SUPER + T"
-                    color: Theme.accent
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 12
-                    font.bold: true
-                    Layout.preferredWidth: 180
-                }
-
-                Text {
-                    text: "Toggle floating"
-                    color: Theme.text
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 13
-                    Layout.fillWidth: true
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-
-                Text {
-                    text: "SUPER + 1–5"
-                    color: Theme.accent
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 12
-                    font.bold: true
-                    Layout.preferredWidth: 180
-                }
-
-                Text {
-                    text: "Switch workspace"
-                    color: Theme.text
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 13
-                    Layout.fillWidth: true
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-
-                Text {
-                    text: "SUPER + SHIFT + 1–5"
-                    color: Theme.accent
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 11
-                    font.bold: true
-                    Layout.preferredWidth: 180
-                }
-
-                Text {
-                    text: "Move window to workspace"
-                    color: Theme.text
-                    font.family: "JetBrainsMono Nerd Font"
-                    font.pixelSize: 13
-                    Layout.fillWidth: true
-                }
+                Layout.topMargin: 8
             }
 
             RowLayout {
@@ -251,18 +219,24 @@ PanelWindow {
 
                 Text {
                     text: "SUPER + ARROWS"
-                    color: Theme.accent
+
+                    color: Theme.text
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 12
                     font.bold: true
-                    Layout.preferredWidth: 180
+
+                    Layout.preferredWidth: 190
                 }
 
                 Text {
                     text: "Focus window"
-                    color: Theme.text
+
+                    color: Theme.textMuted
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 13
+
                     Layout.fillWidth: true
                 }
             }
@@ -272,20 +246,263 @@ PanelWindow {
 
                 Text {
                     text: "SUPER + SHIFT + ARROWS"
-                    color: Theme.accent
+
+                    color: Theme.text
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 11
                     font.bold: true
-                    Layout.preferredWidth: 180
+
+                    Layout.preferredWidth: 190
                 }
 
                 Text {
                     text: "Move window"
-                    color: Theme.text
+
+                    color: Theme.textMuted
+
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 13
+
                     Layout.fillWidth: true
                 }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
+                Text {
+                    text: "SUPER + Q"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 12
+                    font.bold: true
+
+                    Layout.preferredWidth: 190
+                }
+
+                Text {
+                    text: "Close window"
+
+                    color: Theme.textMuted
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 13
+
+                    Layout.fillWidth: true
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
+                Text {
+                    text: "SUPER + F"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 12
+                    font.bold: true
+
+                    Layout.preferredWidth: 190
+                }
+
+                Text {
+                    text: "Fullscreen"
+
+                    color: Theme.textMuted
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 13
+
+                    Layout.fillWidth: true
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
+                Text {
+                    text: "SUPER + T"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 12
+                    font.bold: true
+
+                    Layout.preferredWidth: 190
+                }
+
+                Text {
+                    text: "Toggle floating"
+
+                    color: Theme.textMuted
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 13
+
+                    Layout.fillWidth: true
+                }
+            }
+
+            // WORKSPACES
+            Text {
+                text: "WORKSPACES"
+
+                color: Theme.accent
+
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 11
+                font.bold: true
+
+                Layout.topMargin: 8
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
+                Text {
+                    text: "SUPER + 1–5"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 12
+                    font.bold: true
+
+                    Layout.preferredWidth: 190
+                }
+
+                Text {
+                    text: "Switch workspace"
+
+                    color: Theme.textMuted
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 13
+
+                    Layout.fillWidth: true
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
+                Text {
+                    text: "SUPER + SHIFT + 1–5"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 11
+                    font.bold: true
+
+                    Layout.preferredWidth: 190
+                }
+
+                Text {
+                    text: "Move window to workspace"
+
+                    color: Theme.textMuted
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 13
+
+                    Layout.fillWidth: true
+                }
+            }
+
+            // SYSTEM
+            Text {
+                text: "SYSTEM"
+
+                color: Theme.accent
+
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 11
+                font.bold: true
+
+                Layout.topMargin: 8
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
+                Text {
+                    text: "SUPER + ;"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 12
+                    font.bold: true
+
+                    Layout.preferredWidth: 190
+                }
+
+                Text {
+                    text: "Screenshot"
+
+                    color: Theme.textMuted
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 13
+
+                    Layout.fillWidth: true
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
+                Text {
+                    text: "SUPER + SHIFT + Q"
+
+                    color: Theme.text
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 11
+                    font.bold: true
+
+                    Layout.preferredWidth: 190
+                }
+
+                Text {
+                    text: "Exit Hyprland"
+
+                    color: Theme.textMuted
+
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 13
+
+                    Layout.fillWidth: true
+                }
+            }
+
+            Item {
+                Layout.fillHeight: true
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 1
+
+                color: Theme.surfaceAlt
+            }
+
+            Text {
+                text: "Press the cheat-sheet button again to close"
+
+                color: Theme.textMuted
+
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 11
+
+                Layout.alignment: Qt.AlignHCenter
             }
         }
     }
