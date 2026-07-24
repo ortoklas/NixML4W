@@ -9,5 +9,8 @@ ShellRoot {
 
     PowerPanel {
     }
+    
+    KeybindsPanel {
+    }
 
 }

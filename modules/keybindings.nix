@@ -47,7 +47,22 @@
       "$mod SHIFT, 3, movetoworkspace, 3"
       "$mod SHIFT, 4, movetoworkspace, 4"
       "$mod SHIFT, 5, movetoworkspace, 5"
+
+      # Focus windows
+      "$mod, LEFT, movefocus, l"
+      "$mod, RIGHT, movefocus, r"
+      "$mod, UP, movefocus, u"
+      "$mod, DOWN, movefocus, d"
+
+      # Move windows
+      "$mod SHIFT, LEFT, movewindow, l"
+      "$mod SHIFT, RIGHT, movewindow, r"
+      "$mod SHIFT, UP, movewindow, u"
+      "$mod SHIFT, DOWN, movewindow, d"
+      
     ];
+
+  
 
     # Mouse window controls
     bindm = [

@@ -90,6 +90,14 @@ PanelWindow {
                 color: Theme.surfaceAlt
             }
 
+            // KEYBINDS
+            KeybindsButton {
+            }
+            
+            // RELOAD QUICKSHELL
+            ReloadButton {
+            }
+            
             // POWER
             PowerButton {
             }
